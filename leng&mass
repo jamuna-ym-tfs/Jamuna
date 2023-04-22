@@ -1,0 +1,118 @@
+# define conversion functions
+
+def length_converter(length_value, conversion_direction):
+    if conversion_direction == "meters to feet":
+        feet_value = length_value * 3.28084
+        return feet_value
+    elif conversion_direction == "meters to yards":
+        yards_value = length_value * 1.09361
+        return yards_value
+    elif conversion_direction == "feet to meters":
+        meters_value = length_value / 3.28084
+        return meters_value
+    elif conversion_direction == "yards to meters":
+        meters_value = length_value / 1.09361
+        return meters_value
+    elif conversion_direction == "yards to miles":
+        miles_value = length_value / 1760.0
+        return miles_value
+    elif conversion_direction == "miles to yards":
+        yards_value = length_value * 1760.0
+        return yards_value
+    elif conversion_direction == "kilometers to miles":
+        miles_value = length_value * 0.62137
+        return miles_value
+    elif conversion_direction == "miles to kilometers":
+        kilometers_value = length_value / 1.60934
+        return kilometers_value
+
+def mass_weight_converter(mass_weight_value, conversion_direction):
+    if conversion_direction == "Kilograms to Pounds":
+        pounds_weight = mass_weight_value * 3.28084
+        return pounds_weight
+    elif conversion_direction == "Grams to Ounces":
+        ounces_weight = mass_weight_value * 1.09361
+        return ounces_weight
+    elif conversion_direction == "Pounds to Kilograms":
+        Kilograms_weight = mass_weight_value / 3.28084
+        return Kilograms_weight
+    elif conversion_direction == "Ounces to Grams":
+        grams_weight = mass_weight_value / 1.09361
+        return grams_weight
+    elif conversion_direction == "Pounds to Ounces":
+        ounces_weight = mass_weight_value / 1760.0
+        return ounces_weight
+    elif conversion_direction == "Ounces to Pounds":
+        pounds_weight = mass_weight_value * 1760.0
+        return pounds_weight
+    elif conversion_direction == "Grams to Pounds":
+        miles_value = mass_weight_value * 0.62137
+        return miles_value
+    elif conversion_direction == "Pounds to Grams":
+        grams_weight = mass_weight_value / 1.60934
+        return grams_weight
+
+# main program loop
+
+print("Welcome to the conversion calculator!\n")
+
+while True:
+    category = input("Choose a category:\n1. Length\n2. Mass and Weight\n3. Volume\n4. Speed\n5 Time\n6 Exit\n")
+    if category == '6':
+        break
+    elif category == '1':
+        conversion_direction = input("Choose a conversion direction:\n1. Meters to Feet\n2. Meters to Yards\n3. Feet to Meters\n4. yard to meters\n5. Yards to miles\n6. miles to yards\n7. kilometers to Miles\n8. miles to kilometers\n")
+        length_value = float(input("Enter the length value: "))
+        if conversion_direction == '1':
+            converted_value = length_converter(length_value, "meters to feet")
+            print(f"{length_value} meters is {converted_value} feet.\n")
+        elif conversion_direction == '2':
+            converted_value = length_converter(length_value, "meters to yards")
+            print(f"{length_value} meters is {converted_value} yards.\n")
+        elif conversion_direction == '3':
+            converted_value = length_converter(length_value, "feet to meters")
+            print(f"{length_value} feet is {converted_value} meters.\n")
+        elif conversion_direction == '4':
+            converted_value = length_converter(length_value, "yard to meters")
+            print(f"{length_value} yard is {converted_value} meters.\n")
+        elif conversion_direction == '5':
+            converted_value = length_converter(length_value, "yards to miles")
+            print(f"{length_value} yards is {converted_value} miles.\n")
+        elif conversion_direction == '6':
+            converted_value = length_converter(length_value, "miles to yards")
+            print(f"{length_value} miles is {converted_value} yards.\n")
+        elif conversion_direction == '7':
+            converted_value = length_converter(length_value, "kilometers to miles")
+            print(f"{length_value} yards is {converted_value} miles.\n")
+        elif conversion_direction == '8':
+            converted_value = length_converter(length_value, "miles to kilometers")
+            print(f"{length_value} miles is {converted_value} kilometers.\n")
+    elif category == '2':
+        conversion_direction = input("Choose a conversion direction:\n1. Kilograms to Pounds\n2. Grams to Ounces\n3. Pounds to Kilograms\n4. Ounces to Grams\n5. Pounds to Ounces\n6. Ounces to Pounds\n7. Grams to Pounds\n8. Pounds to Grams\n")
+        mass_weight_value = float(input("Enter the Mass and Weight value: "))
+        if conversion_direction == '1':
+            converted_value = mass_weight_converter(mass_weight_value, "Kilograms to Pounds")
+            print(f"{mass_weight_value} Kilograms is {converted_value} Pounds.\n")
+        elif conversion_direction == '2':
+            converted_value = mass_weight_converter(mass_weight_value, "Grams to Ounces")
+            print(f"{mass_weight_value} Grams is {converted_value} Ounces.\n")
+        elif conversion_direction == '3':
+            converted_value = mass_weight_converter(mass_weight_value, "Pounds to Kilograms")
+            print(f"{mass_weight_value} Pounds is {converted_value} Kilograms.\n")
+        elif conversion_direction == '4':
+            converted_value = mass_weight_converter(mass_weight_value, "Ounces to Grams")
+            print(f"{mass_weight_value} Ounces is {converted_value} Grams.\n")
+        elif conversion_direction == '5':
+            converted_value = mass_weight_converter(mass_weight_value, "Pounds to Ounces")
+            print(f"{mass_weight_value} Pounds is {converted_value} Ounces.\n")
+        elif conversion_direction == '6':
+            converted_value = mass_weight_converter(mass_weight_value, "Ounces to Pounds")
+            print(f"{mass_weight_value} Ounces is {converted_value} Pounds.\n")
+        elif conversion_direction == '7':
+            converted_value = mass_weight_converter(mass_weight_value, "Grams to Pounds")
+            print(f"{mass_weight_value} Grams is {converted_value} Pounds.\n")
+        elif conversion_direction == '8':
+            converted_value = mass_weight_converter(mass_weight_value, "Pounds to Grams")
+            print(f"{mass_weight_value} Pounds is {converted_value} Grams.\n")
+    else:
+        print("Invalid input, please try again.\n")
