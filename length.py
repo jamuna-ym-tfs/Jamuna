@@ -67,5 +67,5 @@ while True:
     elif category == '2':
         print("This feature is coming soon!\n")
     else:
-        print("Invalid input, please try again.\n")
+        print("Invalid input, please try again..\n")
 
